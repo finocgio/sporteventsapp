@@ -1,13 +1,23 @@
 <script>
+	// Importiere wiederverwendbare Button-Komponente
 	import MyButton from "$lib/components/createbutton.svelte";
+
+	// Hole Daten aus den Server-Props
 	let { data } = $props();
 	const participants = data?.participants ?? [];
 
+	// Lokaler Zustand für Suchbegriff und ausgewählte Kategorie
 	let searchQuery = $state("");
 	let selectedCategory = $state("");
 
+	// Definierte Kategorien für Filter-Buttons
 	const kategorien = ["Alle", "Junior", "Erwachsen", "Senior"];
 
+	/**
+	 * Filtert die Teilnehmerliste nach Suchbegriff und Kategorie.
+	 * - Textsuche: prüft alle Eigenschaften eines Teilnehmers
+	 * - Kategorie: optional, nur wenn spezifisch ausgewählt
+	 */
 	function filterParticipants(array, query, category) {
 		return array.filter((p) => {
 			const matchesQuery = Object.values(p).some((value) =>
@@ -21,6 +31,7 @@
 		});
 	}
 
+	// Wenn Kategorie erneut geklickt wird, wird sie abgewählt
 	function selectCategory(cat) {
 		selectedCategory = cat === selectedCategory ? "" : cat;
 	}
@@ -28,14 +39,14 @@
 
 <h1 class="mb-4">Teilnehmerübersicht</h1>
 
-<!-- Button zum Hinzufügen -->
+<!-- Button zum Hinzufügen eines neuen Teilnehmers -->
 <MyButton
 	href="/participants/create"
 	label="➕ Neuen Teilnehmer erfassen"
 	class="btn-lightblue mb-4"
 />
 
-<!-- Suchfeld -->
+<!-- Eingabefeld für die Textsuche -->
 <div class="mb-3">
 	<input
 		type="text"
@@ -45,7 +56,7 @@
 	/>
 </div>
 
-<!-- Kategorie-Filter -->
+<!-- Kategorie-Auswahl als Buttons -->
 <div class="mb-4 d-flex flex-wrap gap-2">
 	{#each kategorien as k}
 		<button
@@ -60,7 +71,7 @@
 	{/each}
 </div>
 
-<!-- Teilnehmerliste -->
+<!-- Gefilterte Teilnehmerliste -->
 {#if participants.length > 0}
 	<ul class="list-group">
 		{#each filterParticipants(participants, searchQuery, selectedCategory) as p}

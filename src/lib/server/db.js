@@ -1,4 +1,7 @@
+// Importiere den MongoDB-Client und das ObjectId-Utility zur Arbeit mit Dokument-IDs
 import { MongoClient, ObjectId } from 'mongodb';
+
+// Zugriff auf die MongoDB-Verbindungs-URI aus der .env-Datei (private Umgebungskonstante)
 import { MONGODB_URI } from '$env/static/private';
 
 // MongoDB Verbindung
@@ -6,13 +9,13 @@ const client = new MongoClient(MONGODB_URI);
 await client.connect();
 const db = client.db('Sportevents');
 
-// 🔸 Hilfsfunktion zur Konvertierung von ObjectId zu String
+// Hilfsfunktion zur Konvertierung von ObjectId zu String
 function toClientId(doc) {
 	if (!doc) return null;
 	return { ...doc, _id: doc._id.toString() };
 }
 
-// 🔹 RACES
+// RACES
 export async function getRaces() {
 	const result = await db.collection('races').find().toArray();
 	return result.map(toClientId);
@@ -38,7 +41,7 @@ export async function deleteRace(id) {
 	await db.collection('races').deleteOne({ _id: new ObjectId(id) });
 }
 
-// 🔹 RESULTS
+// RESULTS
 export async function getResults() {
 	const result = await db.collection('results').find().toArray();
 	return result.map(toClientId);
@@ -48,7 +51,7 @@ export async function insertResult(result) {
 	await db.collection('results').insertOne(result);
 }
 
-// 🔹 PARTICIPANTS
+// PARTICIPANTS
 export async function getParticipants() {
 	const result = await db.collection('participants').find().toArray();
 	return result.map(toClientId);

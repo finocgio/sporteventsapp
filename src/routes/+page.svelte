@@ -9,15 +9,20 @@
 	<div class="intro-text container my-3">
 		<h1 class="display-5 mb-2">Willkommen zur Sportevents App</h1>
 		<p class="lead text-muted mb-3">
-			Verwalte deine Sportveranstaltungen: Teilnehmer erfassen, Rennen anlegen
-			und Resultate anzeigen.
+			Verwalte deine Sportveranstaltungen: Teilnehmer erfassen, Rennen
+			anlegen und Resultate anzeigen.
 		</p>
 
 		<!-- Buttons direkt unter dem Text, zentriert -->
 		<div class="d-flex justify-content-center gap-3 mt-2">
-			<a href="/participants" class="btn btn-outline-primary">Teilnehmer verwalten</a>
-			<a href="/races" class="btn btn-outline-primary">Rennen verwalten</a>
-			<a href="/results" class="btn btn-outline-primary">Resultate anzeigen</a>
+			<a href="/participants" class="btn btn-outline-primary"
+				>Teilnehmer verwalten</a
+			>
+			<a href="/races" class="btn btn-outline-primary">Rennen verwalten</a
+			>
+			<a href="/results" class="btn btn-outline-primary"
+				>Resultate anzeigen</a
+			>
 		</div>
 	</div>
 </section>
