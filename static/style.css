@@ -1,0 +1,156 @@
+/* ---------------------------------------
+   Grundlayout: Schrift, Farben, Hintergrund
+------------------------------------------ */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* ---------------------------------------
+   Container-Zentrierung
+------------------------------------------ */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ---------------------------------------
+   Typografie: Überschriften
+------------------------------------------ */
+h1, h2, h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ---------------------------------------
+   Buttons: Allgemein + Varianten
+------------------------------------------ */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid transparent;
+}
+
+/* Primäre Buttons */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+/* Umriss-Buttons */
+.btn-outline-primary {
+  background-color: white;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Benutzerdefinierte Variante */
+.btn-lightblue {
+  background-color: #cce5ff;
+  color: #004085;
+  border: 1px solid #b8daff;
+}
+
+.btn-lightblue:hover {
+  background-color: #b8daff;
+}
+
+/* ---------------------------------------
+   Formulare: Felder, Labels, Layout
+------------------------------------------ */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* ---------------------------------------
+   Listen-Design
+------------------------------------------ */
+.list-group {
+  list-style: none;
+  padding: 0;
+}
+
+.list-group-item {
+  background: white;
+  border: 1px solid #dee2e6;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+/* ---------------------------------------
+   Navigation (Header-Leiste)
+------------------------------------------ */
+nav {
+  background-color: #343a40;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------
+   Bilder: responsive + Logo-Icon
+------------------------------------------ */
+img.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* ---------------------------------------
+   Intro-Sektion (Startseite)
+------------------------------------------ */
+.intro-section {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.intro-text h1 {
+  margin-bottom: 0.75rem;
+}
+
+.intro-text p {
+  margin-bottom: 1rem;
+}
